@@ -153,6 +153,7 @@ public class GameManager : Singleton<GameManager>
             {
                 _maxDistance = _contestants.Last()._score;
             }
+            Debug.Log(_contestants.Last()._genome.ToString());
             var champions = _contestants.Skip(Mathf.Max(0, _contestants.Count() - _championCount)).Select(c=>c._genome).ToList();
             //var champions = _contestants.Take(_championCount).Select(c=>c._genome).ToList();
             Reset();
@@ -191,6 +192,7 @@ public class GameManager : Singleton<GameManager>
     {
         ObstacleManager.Instance.Reset();
         _speedRuntime = _speed;
+        _currentDistance = 0;
         foreach (var player in _players)
         {
             player.transform.position = Vector3.zero;
