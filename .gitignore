@@ -27,6 +27,8 @@ ExportedObj/
 *.pdb
 *.zip
 
+TextMesh Pro/
+
 # Unity3D generated meta files
 *.pidb.meta
 
