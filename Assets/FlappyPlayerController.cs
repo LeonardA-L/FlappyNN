@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlappyPlayerController : MonoBehaviour
 {
+    public KeyCode _key;
     private FlappyController _controller;
 
     // Start is called before the first frame update
@@ -15,7 +16,12 @@ public class FlappyPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (GetComponent<FlappyAIController>() != null)
+        {
+            return;
+        }
+        
+        if (Input.GetKeyDown(_key))
         {
             _controller.Jump();
         }
